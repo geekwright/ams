@@ -95,7 +95,7 @@ function AMS_updateCache()
     $tplfileHandler = xoops_getHandler('tplfile');
     $tpllist        = $tplfileHandler->find(null, null, null, $folder);
     $xoopsTpl       = new XoopsTpl();
-    xoops_template_clear_module_cache($amsModule->getVar('mid'));            // Clear module's blocks cache
+    //xoops_template_clear_module_cache($amsModule->getVar('mid'));            // Clear module's blocks cache
 
     //remove RSS cache (XOOPS, ImpressCMS)
     $files_del = array();
@@ -185,7 +185,7 @@ function AMS_SEO_title($title = '', $op = 0, $id = 0, $pg = 0)
     }
 
     // Transformation de la chaine en minuscule
-    // Codage de la chaine afin d'�viter les erreurs 500 en cas de caract�res impr�vus
+    // Codage de la chaine afin d'éviter les erreurs 500 en cas de caractères imprévus
     $title = rawurlencode(strtolower($title));
 
     // avoid problem caused by rawurlencode which convert % to %25
@@ -257,7 +257,7 @@ function AMS_SEO_title($title = '', $op = 0, $id = 0, $pg = 0)
     $rep_pat = array('-', '-', '', '', '', '-', '', '-', '', '', '', '-', '', '', '', '-', '', '', '-at-', '', '-', '', '-', '', '-', '', '-', '');
     $title   = preg_replace($pattern, $rep_pat, $title);
 
-    // Transformation des caract�res accentu�s
+    // Transformation des caractères accentués
     //                  �        �        �        �        �        �        �        �        �        �        �        �        �        �        �
     $pattern = array(
         '/%B0/',
