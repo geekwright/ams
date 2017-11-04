@@ -176,7 +176,7 @@ class AmsSpotlightHandler extends IdgObjectHandler
             switch ($spots[$i]->getVar('mode')) {
                 // Latest Article
                 case 1:
-                    $article_arr = AmsStory::getAllPublished(1, 0, false, 0, 1, true, 'published', $ids);
+                    $article_arr = AmsStory::getAllPublished(1, 0, false, 0, 1, true);
                     $article = $article_arr[0];
                     if (!is_object($article)) {
                         continue;
@@ -187,7 +187,7 @@ class AmsSpotlightHandler extends IdgObjectHandler
 
                 // Latest Article in Topic
                 case 2:
-                    $article_arr = AmsStory::getAllPublished(1, 0, false, $spots[$i]->getVar('topicid'), 1, true, 'published', $ids);
+                    $article_arr = AmsStory::getAllPublished(1, 0, false, $spots[$i]->getVar('topicid'), 1, true);
                     $article = $article_arr[0];
                     if (!is_object($article)) {
                         continue;
